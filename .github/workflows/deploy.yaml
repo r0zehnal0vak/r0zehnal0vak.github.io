@@ -17,6 +17,10 @@ jobs:
 
       - name: Install and Build 🔧
         run: |
+          if [ ! -f package.json ]; then
+            npm init -y
+          fi
+          npm install
           npm ci
           npm run build
           
